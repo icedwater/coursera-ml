@@ -78,6 +78,49 @@ Consider the plot below of `h_theta(x) = theta_0 + theta_1 * x`. What are `theta
   c. `theta_0` = 1, `theta_1` = 0.5
   d. `theta_0` = 1, `theta_1` = 1
 
+6. [Video 7][w1v7] at 6'52":
+
+Suppose we have a training set with m=3 examples, plotted below. Our hypothesis
+representation is `h_theta(x) = theta_1 * x`. The cost function `J(theta_1)` is
+`J(theta_1) = ½m * sum(i = 1, m, (h_theta(x^i)−y^i)^2)`. What is `J(0)`?
+
+  ![Graph question](img/2.3-quiz-1-fig.jpg)
+
+  a. 0
+  b. 1/6
+  c. 1
+  d. 14/6
+
+7. [Video 9][w1v9] at 10'48":
+
+Suppose `theta_0 = 1`, `theta_1 = 2`, and we simultaneously update `theta_0` and
+`theta_1` using the rule:
+
+    theta_j <= theta_j + sqrt(theta_0 * theta_1) (for j=0 and j=1)
+    
+What are the resulting values of `theta_0` and `theta_1`?
+
+  a. 0
+  b. 1/6
+  c. 1
+  d. 14/6
+
+8. [Video 10][w1v10] at 8'04":
+
+Suppose `theta_1` is at a local optimum of `J(theta_1)`, such as shown in the
+figure. What will one step of gradient descent
+
+    theta_1 <= theta_1 - alpha * (diff wrt theta_1) J(theta_1)
+    
+do?
+
+  ![Graph question](img/2.6-quiz-1-fig.jpg)
+
+  a. Leave `theta_1` unchanged
+  b. Change `theta_1` in a random direction
+  c. Move `theta_1` in the direction of the global minimum of `J(theta_1)`
+  d. Decrease `theta_1`
+
 [mitch97]: Machine Learning. McGraw Hill. p. 2. ISBN 0-7-042807-7
 [w1v1]: https://www.coursera.org/learn/machine-learning/lecture/RKFpn/
 [w1v2]: https://www.coursera.org/learn/machine-learning/lecture/Ujm7v/
@@ -85,3 +128,8 @@ Consider the plot below of `h_theta(x) = theta_0 + theta_1 * x`. What are `theta
 [w1v4]: https://www.coursera.org/learn/machine-learning/lecture/olRZo/
 [w1v5]: https://www.coursera.org/learn/machine-learning/lecture/db3jS/
 [w1v6]: https://www.coursera.org/learn/machine-learning/lecture/rkTp3/
+[w1v7]: https://www.coursera.org/learn/machine-learning/lecture/N09c6/
+[w1v8]: https://www.coursera.org/learn/machine-learning/lecture/nwpe2/
+[w1v9]: https://www.coursera.org/learn/machine-learning/lecture/8spIM/
+[w1v10]: https://www.coursera.org/learn/machine-learning/lecture/GFFPB/
+[w1v11]: https://www.coursera.org/learn/machine-learning/lecture/kCvQc/

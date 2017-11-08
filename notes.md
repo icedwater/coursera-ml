@@ -24,3 +24,11 @@
 
         J(theta_0, theta_1) = 1/2m * sum( i = 1, m, (h_theta(x^i) - (y^i))^2 )
 
+4. Gradient Descent video:
+
+    - repeat until convergence {
+        theta_j <= theta_j - alpha * (diff wrt theta_j) J(theta_0, theta_1)
+      }
+
+      where `alpha` is the learning rate
+    - thetas should be updated simultaneously.
