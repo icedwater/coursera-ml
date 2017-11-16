@@ -62,8 +62,98 @@ descent with multiple variables:
 
 ![multiple-gradient-descent](img/03-multi-gd.png)
 
-## Multiple Features
-## Multiple Features
-## Multiple Features
-## Multiple Features
-## Multiple Features
+## Feature Scaling
+
+We can speed up gradient descent by having each of our input values in roughly
+the same range. This is because θ will descend quickly on small ranges and
+slowly on large ranges, and so will oscillate inefficiently down to the optimum
+when the variables are very uneven.
+
+The way to prevent this is to modify the ranges of our input variables so that
+they are all roughly the same. Ideally:
+
+−1 ≤ x(i) ≤ 1
+
+or
+
+−0.5 ≤ x(i) ≤ 0.5
+
+These aren't exact requirements; we are only trying to speed things up. The goal
+is to get all input variables into roughly one of these ranges, give or take a
+few.
+
+Two techniques to help with this are feature scaling and mean normalization.
+Feature scaling involves dividing the input values by the range (i.e. the
+maximum value minus the minimum value) of the input variable, resulting in a new
+range of just 1. Mean normalization involves subtracting the average value for
+an input variable from the values for that input variable resulting in a new
+average value for the input variable of just zero. To implement both of these
+techniques, adjust your input values as shown in this formula:
+
+xi:=xi−μisi
+
+Where μi is the average of all the values for feature (i) and si is the range of
+values (max - min), or si is the standard deviation.
+
+Note that dividing by the range, or dividing by the standard deviation, give
+different results. The quizzes in this course use range - the programming
+exercises use standard deviation.
+
+For example, if xi represents housing prices with a range of 100 to 2000 and a
+mean value of 1000, then, xi:=price−10001900
+
+## Learning Rate
+
+Debugging gradient descent. Make a plot with number of iterations on the x-axis.
+Now plot the cost function, J(θ) over the number of iterations of gradient
+descent. If J(θ) ever increases, then you probably need to decrease α.
+
+Automatic convergence test. Declare convergence if J(θ) decreases by less than E
+in one iteration, where E is some small value such as 10−3. However in practice
+it's difficult to choose this threshold value.
+
+![plotting J to see cost trend](img/03-multi-plotj.png)
+
+It has been proven that if learning rate α is sufficiently small, then J(θ) will
+decrease on every iteration.
+
+![learn rate implications](img/03-multi-diff-learnrate.png)
+
+To summarize:
+
+If α is too small: slow convergence.
+
+If α is too large: may not decrease on every iteration and thus may not
+converge.
+
+## Features and Polynomial Regression
+
+We can improve our features and the form of our hypothesis function in a couple
+different ways.
+
+We can combine multiple features into one. For example, we can combine x1 and
+x2 into a new feature x3 by taking x1⋅x2.
+
+### Polynomial Regression
+
+Our hypothesis function need not be linear (a straight line) if that does not
+fit the data well.
+
+We can change the behavior or curve of our hypothesis function by making it a
+quadratic, cubic or square root function (or any other form).
+
+For example, if our hypothesis function is `hθ(x) = θ0 + θ1x1` then we can
+create additional features based on `x1`, to get the quadratic function
+`hθ(x) = θ0 + θ1x1 + θ2(x1)^2` or the cubic function `hθ(x) = θ0 + θ1x1 + 
+θ2(x1)^2 + θ3(x1)^3`.
+
+In the cubic version, we have created new features `x2` and `x3` where `x2 =
+(x1)^2` and `x3 = (x1)^3`.
+
+To make it a square root function, we could do: `hθ(x) = θ0 + θ1x1 + θ2*sqrt(x1)`
+
+One important thing to keep in mind is, if you choose your features this way
+then feature scaling becomes very important.
+
+eg. if `x1` has range 1 - 1000 then range of `(x1)^2` becomes 1 - 1000000 and
+that of `(x1)^3` becomes 1 - 1000000000.
