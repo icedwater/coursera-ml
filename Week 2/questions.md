@@ -112,9 +112,31 @@ What are X and y?
   d. X = [1  9 124], y = [28]
          [1  5 103]      [20]
 
+7. [Video 13][w2v13] at 13'07":
+
+Suppose you have three vector valued variables `u`, `v`, `w`:
+
+        [u_1]      [v_1]      [w_1]
+    u = [u_2], v = [v_2], w = [w_2]
+        [u_3]      [v_3]      [w_3]
+
+Your code implements the following:
+
+    for j = 1:3,
+      u(j) = 2 * v(j) + 5 * w(j);
+    end;
+
+How would you vectorize this code?
+
+  a. u = 2 * v' * v * w + 5 * w' * w * v; (where v' denotes the transpose of v)
+  b. u = 2 * v + 5 * w
+  c. u = 5 * v + 2 * w
+  d. u = 2 + v + 5 + w
+
 [w2v1]: https://www.coursera.org/learn/machine-learning/lecture/6Nj1q/
 [w2v2]: https://www.coursera.org/learn/machine-learning/lecture/Z9DKX/
 [w2v3]: https://www.coursera.org/learn/machine-learning/lecture/xx3Da/
 [w2v4]: https://www.coursera.org/learn/machine-learning/lecture/3iawu/
 [w2v5]: https://www.coursera.org/learn/machine-learning/lecture/Rqgfz/
 [w2v6]: https://www.coursera.org/learn/machine-learning/lecture/2DKxQ/
+[w2v13]: https://www.coursera.org/learn/machine-learning/lecture/WnQWH/
